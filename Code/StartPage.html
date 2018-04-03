@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<header>
+		<title>Start Page</title>
+		<style type="text/css">
+			#bg{
+				position: fixed; 
+				top: 0; 
+				left: 0; 
+				min-width: 100%;
+				min-height: 100%;
+			}
+		</style>
+		<script type="text/javascript">
+			function runEvent(e){
+				if (e.keyCode==13) {
+					window.location="LogIn.html";
+				};
+			}
+		</script>
+	</header>
+	<body onkeypress="return runEvent(event)">
+		<a href="MainPage.html">
+			<img src="lib1.jpg" id="bg"/>
+		</a>
+	</body>	
+</html>

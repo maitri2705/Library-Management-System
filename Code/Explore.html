@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Explore</title>
+        <link rel="stylesheet" 	type="text/css" href="style.css">
+        <script src="jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="script.js" type="text/javascript"></script>
+        <style type="text/css">
+            #menu{
+                background-color: rgb(252,252,252);
+                margin: 200px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                width: 500px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="menu">
+        <h1>Search books by ISBN and/or Title and/or Author</h1>
+            <form id="form2" action="Explore.php">
+        		<div class="form-row">
+        			<input type="text" name="searchres" id="search"/>
+                    <input class="submit" type="submit" value="Search" id="explore" />
+        		</div>
+            </form>
+        </div>
+        </center>
+    </body>
+</html>

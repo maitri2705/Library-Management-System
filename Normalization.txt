@@ -1,0 +1,21 @@
+create temporary table numbers as (select 1 as n);
+
+drop table if exists tempbook1;
+create table tempbook1 ( id int AUTO_INCREMENT primary key, ISBN varchar(10),Author varchar(50));
+
+insert into tempbook1(ISBN, Author) select isbn10,substring_index(substring_index(Author,',',isbn10),',',1) as
+ author from temp_books join numbers on char_length(author)-char_length(replace(author,',',' '))>=n-1;
+
+drop table if exists tempbook2;
+
+create table tempbook2 ( id int AUTO_INCREMENT primary key, ISBN varchar(10),Author varchar(50));
+
+insert into tempbook2(ISBN, Author) select isbn10,substring_index(substring_index(author,',',isbn10),',',-1) as
+ author from temp_books join numbers on char_length(author)-char_length(replace(author,',',' '))>=n-1;
+
+create table temp_book_author ( id int AUTO_INCREMENT primary key, ISBN varchar(10),Author varchar(50));
+insert into temp_book_author(isbn, author) select isbn, author from tempbook1 union distinct select isbn, author from tempbook2;
+
+insert into authors (author_id, author_name) select id, author from temp_book_author;
+
+insert into book_authors(author_id, isbn) select id, isbn from temp_book_author;

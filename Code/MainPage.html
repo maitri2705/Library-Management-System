@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Library Management System</title>
+        <link rel="stylesheet" 	type="text/css" href="Style.css">
+        <script src="jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="script.js" type="text/javascript"></script>
+        <style type="text/css">
+        	#menu{
+        		background-color: rgb(252,252,252);
+        		width: 500px;
+        		margin-top: 200px;
+        		padding-top: 20px;
+        		padding-bottom: 20px;
+        	}
+        </style>
+    </head>
+    <body>
+        <center>
+        <h1>Welcome to the Library</h1>
+        
+        <?php include('Connection.php');?>
+		<div id="menu">
+            <ul style="list-style: none;">
+                <div class="but" id="search">
+                    <a href="Explore.html">Search and Check Out</a>
+                </div>
+                <br>
+                <br>
+                <div class="but" id="chkin">
+                    <a href="CheckIn.html">Check In</a>
+                </div>
+                <br>
+                <br>
+                <div class="but" id="borrow">
+                    <a href="Borrower_Entry.html">Borrower Management</a>
+                </div>
+                <br>
+                <br>
+                <div class="but" id="fines">
+                    <a href="Fines.php">Show Fines</a>
+                </div>
+            </ul>
+			</div>
+        </center>
+    </body>
+</html>
